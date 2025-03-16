@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: crm
+
+  datasource:
+    url: jdbc:postgresql://db.wphtxsxcruvgyelojtxq.supabase.co/postgres?currentSchema=public
+    username: postgres
+    password: EriY25kLPT5R7vb
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+      hibernate:
+        naming:
+          physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+          implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
