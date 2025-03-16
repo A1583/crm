@@ -22,8 +22,6 @@ public class SearchCustomerRequestRequestDto extends CustomerRequestDto {
     LocalDate createdAtFrom;
     @Schema(description = "วันที่สิ้นสุดการสร้างคำขอ", example = "2025-03-16")
     LocalDate createdAtTo;
-    @Schema(description = "พนักงานที่สร้างคำขอ", example = "EMP12345")
-    String createdBy;
     @Schema(description = "วันที่เริ่มต้นการอัปเดตล่าสุด", example = "2025-03-16")
     LocalDate updatedAtFrom;
     @Schema(description = "วันที่สิ้นสุดการอัปเดตล่าสุด", example = "2025-03-16")

@@ -5,7 +5,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Builder
@@ -16,6 +15,5 @@ import java.util.List;
 public class ErrorResponse {
     int status;
     String message;
-    List<String> errors;
     LocalDateTime timestamp;
 }

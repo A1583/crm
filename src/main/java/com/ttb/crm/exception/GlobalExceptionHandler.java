@@ -19,14 +19,11 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex) {
         log.error(ex.getBindingResult().getFieldError().getDefaultMessage(), ex);
         var errors = new ArrayList<String>();
-        ex.getBindingResult().getFieldErrors().forEach(error -> {
-            errors.add(MessageFormat.format("{0}: {1}", error.getField(), error.getDefaultMessage()));
-        });
+        var error = ex.getBindingResult().getFieldErrors().get(0);
 
         var errorResponse = ErrorResponse.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
-                .message("Validation Failed")
-                .errors(errors)
+                .message(MessageFormat.format("{0} {1}", error.getField(), error.getDefaultMessage()))
                 .timestamp(LocalDateTime.now())
                 .build();
 

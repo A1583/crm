@@ -90,9 +90,9 @@ public class CustomerRequestJdbcTemplateRepository {
             params.addValue("createdAtTo", request.getCreatedAtTo());
         }
 
-        if (StringUtils.isNotBlank(request.getCreatedBy())) {
+        if (StringUtils.isNotBlank(request.getEmployeeId())) {
             sql.append(" and created_by = :createdBy");
-            params.addValue("createdBy", request.getCreatedBy());
+            params.addValue("createdBy", request.getEmployeeId());
         }
 
         if (Objects.nonNull(request.getUpdatedAtFrom())) {
