@@ -1,0 +1,97 @@
+{
+  "info": {
+    "_postman_id": "237f8353-74df-4a5a-bc50-e98ce72378a1",
+    "name": "crm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25768865"
+  },
+  "item": [
+    {
+      "name": "customer-request",
+      "item": [
+        {
+          "name": "search",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"customerId\": \"123456789\",\n    \"customerName\": \"สมชาย\",\n    \"customerLastName\": \"ใจดี\",\n    \"email\": \"a@gmail.com\",\n    \"telephone\": \"0812345678\",\n    \"requestType\": \"CHECK_BALANCE\",\n    \"requestDetails\": \"ขอตรวจสอบยอดเงินคงเหลือในบัญชี\",\n    \"priority\": \"HIGH\",\n    \"employeeId\": \"EMP00123\",\n    \"channel\": \"CALL_CENTER\",\n    \"branchId\": \"BRANCH001\",\n    \"customerRequestId\": 11,\n    \"status\": \"COMPLETED\",\n    \"createdAtFrom\": \"2025-03-15\",\n    \"createdAtTo\": \"2025-03-16\",\n    \"createdBy\": \"EMP00123\",\n    \"updatedAtFrom\": \"2025-03-15\",\n    \"updatedAtTo\": \"2025-03-16\",\n    \"updatedBy\": \"EMP67890\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/customer-request/search",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customer-request",
+                "search"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "new",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerRequests\": [\n    {\n      \"customerId\": \"123456789\",\n      \"customerName\": \"สมชาย\",\n      \"customerLastName\": \"ใจดี\",\n      \"email\": \"a@gmail.com\",\n      \"telephone\": \"0812345678\",\n      \"requestType\": \"CHECK_BALANCE\",\n      \"requestDetails\": \"ขอตรวจสอบยอดเงินคงเหลือในบัญชี\",\n      \"priority\": \"HIGH\",\n      \"employeeId\": \"EMP00123\",\n      \"channel\": \"CALL_CENTER\",\n      \"branchId\": \"BRANCH001\"\n    },\n    {\n      \"customerId\": \"987654321\",\n      \"customerName\": \"สายฝน\",\n      \"customerLastName\": \"ใจดี\",\n      \"email\": \"b@gmail.com\",\n      \"telephone\": \"0891234567\",\n      \"requestType\": \"LOAN_REQUEST\",\n      \"requestDetails\": \"ขอข้อมูลเกี่ยวกับสินเชื่อบ้าน\",\n      \"priority\": \"MEDIUM\",\n      \"employeeId\": \"EMP00234\",\n      \"channel\": \"BRANCH\",\n      \"branchId\": \"BRANCH002\"\n    },\n    {\n      \"customerId\": \"555666777\",\n      \"customerName\": \"อนันต์\",\n      \"customerLastName\": \"ตั้งใจ\",\n      \"email\": \"c@gmail.com\",\n      \"telephone\": \"0912345678\",\n      \"requestType\": \"CREDIT_CARD_APPLICATION\",\n      \"requestDetails\": \"ขอสมัครบัตรเครดิต\",\n      \"priority\": \"HIGH\",\n      \"employeeId\": \"EMP00345\",\n      \"channel\": \"ONLINE\",\n      \"branchId\": null\n    },\n    {\n      \"customerId\": \"888999000\",\n      \"customerName\": \"พิมพ์ใจ\",\n      \"customerLastName\": \"ยิ้มแย้ม\",\n      \"email\": \"d@gmail.com\",\n      \"telephone\": \"0819998887\",\n      \"requestType\": \"ACCOUNT_CLOSURE\",\n      \"requestDetails\": \"ขอปิดบัญชีออมทรัพย์\",\n      \"priority\": \"LOW\",\n      \"employeeId\": \"EMP00456\",\n      \"channel\": \"CALL_CENTER\",\n      \"branchId\": \"BRANCH003\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/customer-request/new",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customer-request",
+                "new"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
